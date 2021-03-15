@@ -31,13 +31,14 @@ const reducer = (state, action) => {
       let newBasket = [...state.basket];
 
       if (index >= 0) {
+        //   splice removes the element in the array
         newBasket.splice(index, 1);
       } else {
         console.warn(
           `Can't remove product (id: ${action.id}) as its not in basket!`
         )
       }
-      
+
       return {
         ...state,
         newBasket: newBasket,
