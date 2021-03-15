@@ -16,13 +16,13 @@ const reducer = (state, action) => {
       return {
         ...state,
         basket: [...state.basket, action.item],
-      };
+      }
 
-    // case "EMPTY_BASKET":
-    //   return {
-    //     ...state,
-    //     basket: [],
-    //   };
+    case "EMPTY_BASKET":
+      return {
+        ...state,
+        basket: [],
+      }
 
     case "REMOVE_FROM_BASKET":
       const index = state.basket.findIndex(
@@ -38,17 +38,16 @@ const reducer = (state, action) => {
           `Can't remove product (id: ${action.id}) as its not in basket!`
         )
       }
-
       return {
         ...state,
-        newBasket: newBasket,
+        basket: newBasket,
       }
 
       case "SET_USER":
         return {
           ...state,
           user: action.user,
-        };
+        }
 
     default:
       return state;
