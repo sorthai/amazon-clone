@@ -44,11 +44,11 @@ const reducer = (state, action) => {
         newBasket: newBasket,
       }
 
-    //   case "SET_USER":
-    //     return {
-    //       ...state,
-    //       user: action.user,
-    //     };
+      case "SET_USER":
+        return {
+          ...state,
+          user: action.user,
+        };
 
     default:
       return state;
